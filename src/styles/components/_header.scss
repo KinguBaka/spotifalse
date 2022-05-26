@@ -1,0 +1,53 @@
+.App-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: $header-color;
+  color: $text-color;
+  @include verticalCenter;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      color: $spotify-color;
+    }
+  }
+
+  &-right {
+    width: 50%;
+    margin: 10px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+
+    & > * {
+      margin: 0 5px 0 5px;
+    }
+
+    button {
+      @include buttonStyle;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: nowrap;
+
+      input {
+        padding: 10px;
+        font-size: 16px;
+        color: #000000;
+        border: none;
+        border-radius: 28px;
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}
