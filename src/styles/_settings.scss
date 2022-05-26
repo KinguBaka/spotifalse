@@ -2,8 +2,10 @@ $font-1: sans-serif;
 
 $background-color: #121212;
 $header-color: #000000;
-$text-color: #ffffff;
+$text-primary-color: #ffffff;
+$text-secondary-color: #a8a8a8;
 $spotify-color: #1fd760;
+$card-color: #181818;
 
 @mixin buttonStyle {
   background-color: #000000;
@@ -11,7 +13,7 @@ $spotify-color: #1fd760;
   border: 2px solid $spotify-color;
   display: inline-block;
   cursor: pointer;
-  color: $text-color;
+  color: $text-primary-color;
   padding: 10px 30px;
   text-decoration: none;
   &:active {
@@ -26,11 +28,17 @@ $spotify-color: #1fd760;
   align-items: center;
 }
 
+@mixin horizontalCenter {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: $text-color;
+  color: $text-primary-color;
 }
 
 body {

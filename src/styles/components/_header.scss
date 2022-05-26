@@ -1,6 +1,7 @@
 .App-header {
   position: fixed;
   top: 0;
+  z-index: 99;
   width: 100%;
   margin: auto;
   padding: 15px;
@@ -8,7 +9,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   background: $header-color;
-  color: $text-color;
+  color: $text-primary-color;
   @include verticalCenter;
 
   a {

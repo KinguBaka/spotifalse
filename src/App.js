@@ -3,20 +3,20 @@ import Result from "./components/Result";
 import { useState } from "react";
 
 function App() {
-  const [artists, setArtists] = useState([]);
+  const [albums, setAlbums] = useState([]);
   const [token, setToken] = useState("");
   const [searchKey, setSearchKey] = useState("");
 
   return (
     <div className="App">
       <Header
-        setArtists={setArtists}
+        setAlbums={setAlbums}
         token={token}
         setToken={setToken}
         searchKey={searchKey}
         setSearchKey={setSearchKey}
       />
-      <Result artists={artists} token={token} />
+      <Result albums={albums} token={token} searchKey={searchKey} />
     </div>
   );
 }

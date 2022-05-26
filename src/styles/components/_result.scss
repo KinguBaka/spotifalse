@@ -1,0 +1,30 @@
+.App-result {
+  margin-top: 40vh;
+
+  &-albumsCard {
+    @include horizontalCenter;
+    background-color: $card-color;
+    margin: 20px auto 20px auto;
+    padding: 15px;
+    width: 70vw;
+    transition: width 0.5s, background-color 1s;
+
+    &:hover {
+      width: 72vw;
+      background-color: #272727;
+      z-index: -6;
+    }
+
+    img {
+      width: 100%;
+    }
+
+    &-info {
+      margin: 10px;
+      .secondary-color {
+        color: $text-secondary-color;
+        margin-top: 10px;
+      }
+    }
+  }
+}

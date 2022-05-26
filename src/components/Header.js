@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useEffect } from "react";
 
-function Header({ setArtists, token, setToken, searchKey, setSearchKey }) {
+function Header({ setAlbums, token, setToken, searchKey, setSearchKey }) {
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
@@ -26,19 +26,21 @@ function Header({ setArtists, token, setToken, searchKey, setSearchKey }) {
     window.localStorage.removeItem("token");
   };
 
-  const searchArtists = async (e) => {
+  const searchAlbums = async (e) => {
     e.preventDefault();
     const { data } = await axios.get("https://api.spotify.com/v1/search", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
       params: {
-        q: searchKey,
-        type: "artist",
+        q: "artist:" + searchKey,
+        type: "album",
+        include_external: "audio",
+        market: "FR",
       },
     });
 
-    setArtists(data.artists.items);
+    setAlbums(data.albums.items);
   };
 
   return (
@@ -55,7 +57,7 @@ function Header({ setArtists, token, setToken, searchKey, setSearchKey }) {
         </a>
       ) : (
         <div className="App-header-right">
-          <form onSubmit={searchArtists}>
+          <form onSubmit={searchAlbums}>
             <input type="text" onChange={(e) => setSearchKey(e.target.value)} />
             <button type={"submit"}>Search</button>
           </form>
