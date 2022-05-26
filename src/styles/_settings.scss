@@ -6,7 +6,7 @@ $text-color: #ffffff;
 $spotify-color: #1fd760;
 
 @mixin buttonStyle {
-  background-color: transparent;
+  background-color: #000000;
   border-radius: 28px;
   border: 2px solid $spotify-color;
   display: inline-block;

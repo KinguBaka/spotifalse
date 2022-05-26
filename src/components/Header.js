@@ -43,7 +43,10 @@ function Header({ setArtists, token, setToken, searchKey, setSearchKey }) {
 
   return (
     <header className="App-header">
-      <h1>Spotifalse</h1>
+      <div className="App-header-left">
+        <img src="./img/spotifalse.png" alt="" />
+        <h1>Spotifalse</h1>
+      </div>
       {!token ? (
         <a
           href={`${process.env.REACT_APP_AUTH_ENDPOINT}?client_id=${process.env.REACT_APP_CLIENT_ID}&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}&response_type=${process.env.REACT_APP_RESPONSE_TYPE}`}
