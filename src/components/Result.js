@@ -8,7 +8,7 @@ function Result({ albums, searchKey }) {
       <div className="App-result-albumsCard" key={album.id}>
         {album.images.length ? (
           <div className="App-result-albumsCard-img">
-            <img src={album.images[0].url} alt="" />
+            <img src={album.images[0].url} alt={"cover album: " + album.name} />
           </div>
         ) : (
           <div>No Image</div>

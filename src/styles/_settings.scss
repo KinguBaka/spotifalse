@@ -22,6 +22,21 @@ $card-color: #181818;
   }
 }
 
+@mixin iconStyle {
+  position: static;
+  font-size: 4vh;
+  margin: 10px;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:active {
+    position: relative;
+    top: 1px;
+  }
+}
+
 @mixin verticalCenter {
   display: flex;
   //justify-content: center;

@@ -41,6 +41,9 @@ function Header({ setAlbums, token, setToken, searchKey, setSearchKey }) {
     });
 
     setAlbums(data.albums.items);
+
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
   };
 
   return (

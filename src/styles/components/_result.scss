@@ -1,6 +1,10 @@
 .App-result {
   margin-top: 40vh;
 
+  h2 {
+    @include horizontalCenter;
+  }
+
   &-albumsCard {
     @include horizontalCenter;
     background-color: $card-color;

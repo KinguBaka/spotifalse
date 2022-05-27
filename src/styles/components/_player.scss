@@ -1,0 +1,33 @@
+.App-player {
+  @include horizontalCenter;
+  position: fixed;
+  bottom: 0;
+  z-index: 99;
+  width: 100%;
+  margin: auto;
+  background: $header-color;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+
+  #pauseBtn,
+  #muteVolBtn {
+    display: none;
+  }
+  &-volume {
+    .volume-icon {
+      @include iconStyle;
+    }
+  }
+
+  &-control {
+    .controls-icon {
+      @include iconStyle;
+    }
+  }
+
+  button {
+    @include buttonStyle;
+  }
+}
