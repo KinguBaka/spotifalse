@@ -15,7 +15,9 @@
   #muteVolBtn {
     display: none;
   }
+
   &-volume {
+    @include verticalCenter;
     .volume-icon {
       @include iconStyle;
     }

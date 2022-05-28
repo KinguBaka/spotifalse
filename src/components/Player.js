@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Howl } from "howler";
+import React from "react";
+import { Howl, Howler } from "howler";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -8,8 +8,8 @@ import {
   faVolumeMute,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Player(volume, setVolume) {
-  const sound = new Howl({
+function Player() {
+  var sound = new Howl({
     src: ["https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"],
     html5: true,
     preload: true,
@@ -39,11 +39,6 @@ function Player(volume, setVolume) {
     document.getElementById("muteVolBtn").style.display = "inline";
   };
 
-  const majVolume = (val) => {
-    setVolume(val);
-    sound.volume(val / 100);
-  };
-
   return (
     <div className="App-player">
       <div className="App-player-info">
@@ -66,7 +61,7 @@ function Player(volume, setVolume) {
         </div>
         <div className="App-player-control-times">
           <div id="timer">0:00</div>
-          <div id="duration">0:00</div>
+          <div id="duration">0:00 : {sound.duration()}</div>
         </div>
       </div>
       <div className="App-player-volume">
@@ -87,8 +82,8 @@ function Player(volume, setVolume) {
           type="range"
           min="1"
           max="100"
-          defaultValue={volume}
-          onChange={(e) => majVolume(e.target.value)}
+          defaultValue="50"
+          onChange={(e) => sound.volume(e.target.value / 100)}
         />
       </div>
     </div>
