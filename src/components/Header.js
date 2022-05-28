@@ -1,8 +1,10 @@
 import React from "react";
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-function Header({ setAlbums, token, setToken, searchKey, setSearchKey }) {
+function Header({ setAlbums, token, setToken }) {
+  const [searchKey, setSearchKey] = useState("");
+
   useEffect(() => {
     const hash = window.location.hash;
     let token = window.localStorage.getItem("token");
@@ -19,7 +21,7 @@ function Header({ setAlbums, token, setToken, searchKey, setSearchKey }) {
     }
 
     setToken(token);
-  }, []);
+  }, [setToken]);
 
   const logout = () => {
     setToken("");
