@@ -24,10 +24,32 @@ function Tracks({ id, token }) {
     searchTracks();
   }, []);
 
+  function millisToMinutesAndSeconds(millis) {
+    var minutes = Math.floor(millis / 60000);
+    var seconds = ((millis % 60000) / 1000).toFixed(0);
+    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  }
+
   return (
-    <ul>
+    <ul className={"App-tracks " + id}>
       {tracks.map((track) => (
-        <li key={track.id}>{track.name}</li>
+        <li key={track.id}>
+          <div className="track">
+            <div className="track-info">
+              <div className="track-info-number">{track.track_number}</div>
+              <div className="track-info-artistsAndTracks">
+                <div className="trackName">{track.name}</div>
+                <div className="artist">
+                  {track.artists.map((artist) => " - " + artist.name)}
+                </div>
+              </div>
+            </div>
+            <div className="track-duration">
+              {millisToMinutesAndSeconds(track.duration_ms)}
+            </div>
+          </div>
+          <br />
+        </li>
       ))}
     </ul>
   );

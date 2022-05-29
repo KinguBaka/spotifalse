@@ -13,11 +13,9 @@
     padding: 15px;
     width: 70vw;
     transition: width 0.5s, background-color 1s;
-    cursor: pointer;
 
     &:hover {
       width: 72vw;
-      background-color: #272727;
       z-index: -6;
     }
 
