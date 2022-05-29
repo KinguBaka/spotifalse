@@ -1,6 +1,7 @@
 .App-result {
   margin-top: 40vh;
   margin-bottom: 40vh;
+  font-size: 1vmax;
 
   h2 {
     @include horizontalCenter;
@@ -12,10 +13,10 @@
     margin: 20px auto 20px auto;
     padding: 15px;
     width: 70vw;
-    transition: width 0.5s, background-color 1s;
+    transition: transform 0.5s, background-color 1s;
 
     &:hover {
-      width: 72vw;
+      transform: scale(1.01);
       z-index: -6;
     }
 
