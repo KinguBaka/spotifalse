@@ -8,7 +8,7 @@ import {
   faVolumeMute,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Player() {
+function Player(token) {
   var sound = new Howl({
     src: ["https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"],
     html5: true,

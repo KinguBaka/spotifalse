@@ -7,31 +7,6 @@ $text-secondary-color: #a8a8a8;
 $spotify-color: #1fd760;
 $card-color: #181818;
 
-@mixin inputRange {
-  input[type="range"] {
-    -webkit-appearance: none;
-    margin: 10px 0;
-    width: 20vw;
-    max-width: 110px;
-    border-radius: 50px;
-  }
-  input[type="range"]::-webkit-slider-runnable-track {
-    height: 5px;
-    cursor: pointer;
-    background: $spotify-color;
-    border-radius: 50px;
-  }
-  input[type="range"]::-webkit-slider-thumb {
-    height: 15px;
-    width: 15px;
-    border-radius: 50px;
-    background: #ffffff;
-    cursor: pointer;
-    -webkit-appearance: none;
-    margin-top: -5px;
-  }
-}
-
 @mixin buttonStyle {
   background-color: #000000;
   border-radius: 28px;
@@ -41,21 +16,6 @@ $card-color: #181818;
   color: $text-primary-color;
   padding: 10px 30px;
   text-decoration: none;
-  &:active {
-    position: relative;
-    top: 1px;
-  }
-}
-
-@mixin iconStyle {
-  position: static;
-  font-size: 2vmax;
-  margin: 10px;
-  cursor: pointer;
-
-  &:hover {
-    transform: scale(1.05);
-  }
   &:active {
     position: relative;
     top: 1px;

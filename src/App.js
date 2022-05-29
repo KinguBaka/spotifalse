@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Header setAlbums={setAlbums} token={token} setToken={setToken} />
       <Result albums={albums} token={token} />
-      <Player />
+      <Player token={token} />
     </div>
   );
 }

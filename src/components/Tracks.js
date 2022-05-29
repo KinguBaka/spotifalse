@@ -3,6 +3,7 @@ import axios from "axios";
 
 function Tracks({ id, token }) {
   const [tracks, setTracks] = useState([]);
+  const [trackSelect, setTrackSelect] = useState();
 
   useEffect(() => {
     const searchTracks = async () => {
@@ -30,11 +31,15 @@ function Tracks({ id, token }) {
     return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
   }
 
+  function addTrackToState(trackSelected) {
+    setTrackSelect(trackSelected);
+  }
+
   return (
     <ul className={"App-tracks " + id}>
       {tracks.map((track) => (
         <li key={track.id}>
-          <div className="track">
+          <div className="track" onClick={(e) => addTrackToState(track)}>
             <div className="track-info">
               <div className="track-info-number">{track.track_number}</div>
               <div className="track-info-artistsAndTracks">
