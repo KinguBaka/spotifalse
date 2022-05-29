@@ -50,13 +50,13 @@ function Player(token) {
             className="controls-icon"
             id="playBtn"
             icon={faPlay}
-            onClick={() => playSong()}
+            onClick={(e) => playSong()}
           />
           <FontAwesomeIcon
             className="controls-icon"
             id="pauseBtn"
             icon={faPause}
-            onClick={() => pauseSong()}
+            onClick={(e) => pauseSong()}
           />
         </div>
         <div className="App-player-control-times">
@@ -69,13 +69,13 @@ function Player(token) {
           className="volume-icon"
           id="volBtn"
           icon={faVolumeUp}
-          onClick={() => volumeDown()}
+          onClick={(e) => volumeDown()}
         />
         <FontAwesomeIcon
           className="volume-icon"
           id="muteVolBtn"
           icon={faVolumeMute}
-          onClick={() => volumeUp()}
+          onClick={(e) => volumeUp()}
         />
         <input
           id="volRange"
