@@ -12,7 +12,7 @@ function App() {
     <div className="App">
       <Header setAlbums={setAlbums} token={token} setToken={setToken} />
       <Result albums={albums} token={token} setTrackSelect={setTrackSelect} />
-      <Player token={token} trackSelect={trackSelect} />
+      {token ? <Player token={token} trackSelect={trackSelect} /> : ""}
     </div>
   );
 }
