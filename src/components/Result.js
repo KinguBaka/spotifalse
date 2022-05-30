@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Tracks from "./Tracks";
 
 function Result({ albums, token }) {
+  const [trackSelect, setTrackSelect] = useState();
+
   const renderAlbums = () => {
     return albums.map((album) => (
       <div className={"App-result-albumsCard " + album.id} key={album.id}>
@@ -18,7 +20,7 @@ function Result({ albums, token }) {
             {album.release_date} • {album.artists[0].name}
           </div>
         </div>
-        <Tracks token={token} id={album.id} />
+        <Tracks token={token} id={album.id} setTrackSelect={setTrackSelect} />
       </div>
     ));
   };

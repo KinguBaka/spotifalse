@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-function Tracks({ id, token }) {
+function Tracks({ id, token, setTrackSelect }) {
   const [tracks, setTracks] = useState([]);
-  const [trackSelect, setTrackSelect] = useState();
 
   useEffect(() => {
     const searchTracks = async () => {
