@@ -8,7 +8,7 @@ import {
   faVolumeMute,
 } from "@fortawesome/free-solid-svg-icons";
 
-function Player(token) {
+function Player({ token, trackSelect }) {
   var sound = new Howl({
     src: ["https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"],
     html5: true,
@@ -39,10 +39,16 @@ function Player(token) {
     document.getElementById("muteVolBtn").style.display = "inline";
   };
 
+  function millisToMinutesAndSeconds(millis) {
+    var minutes = Math.floor(millis / 60000);
+    var seconds = ((millis % 60000) / 1000).toFixed(0);
+    return minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+  }
+
   return (
     <div className="App-player">
       <div className="App-player-info">
-        <span id="track">Track Name</span>
+        <span id="track-name">{trackSelect.name}</span>
       </div>
       <div className="App-player-control">
         <div className="App-player-control-control">
@@ -60,8 +66,9 @@ function Player(token) {
           />
         </div>
         <div className="App-player-control-times">
-          <div id="timer">0:00</div>
-          <div id="duration">0:00 : {sound.duration()}</div>
+          <div id="duration">
+            0:00 - {millisToMinutesAndSeconds(trackSelect.duration_ms)}
+          </div>
         </div>
       </div>
       <div className="App-player-volume">

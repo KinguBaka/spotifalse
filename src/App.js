@@ -6,12 +6,13 @@ import Player from "./components/Player";
 function App() {
   const [token, setToken] = useState("");
   const [albums, setAlbums] = useState([]);
+  const [trackSelect, setTrackSelect] = useState();
 
   return (
     <div className="App">
       <Header setAlbums={setAlbums} token={token} setToken={setToken} />
-      <Result albums={albums} token={token} />
-      <Player token={token} />
+      <Result albums={albums} token={token} setTrackSelect={setTrackSelect} />
+      <Player token={token} trackSelect={trackSelect} />
     </div>
   );
 }

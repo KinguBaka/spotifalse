@@ -56,6 +56,12 @@
     display: none;
   }
 
+  &-info {
+    width: 25vw;
+    margin: 10px;
+    text-align: start;
+  }
+
   &-volume {
     @include verticalCenter;
     @include inputRange;
@@ -69,6 +75,11 @@
   &-control {
     .controls-icon {
       @include iconStyle;
+      margin: 10px;
+    }
+
+    &-time {
+      position: fixed;
     }
   }
 

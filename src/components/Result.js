@@ -1,9 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import Tracks from "./Tracks";
 
-function Result({ albums, token }) {
-  const [trackSelect, setTrackSelect] = useState();
-
+function Result({ albums, token, setTrackSelect }) {
   const renderAlbums = () => {
     return albums.map((album) => (
       <div className={"App-result-albumsCard " + album.id} key={album.id}>
