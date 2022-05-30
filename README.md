@@ -1,6 +1,6 @@
 Création d'une petite app utilisant React pour afficher les albums à la recherche d'un artiste
 
-Utilisation de l'API spotify (login de son compte spotify pour avoir accés au service de celui-ci)
+Utilisation de l'API spotify (login de son compte spotify pour avoir accés au service et celui-ci doit être renseigné sur le portail spotify develloper (me faire la demande si besoin))
 
 Premiére insatallation :
 
