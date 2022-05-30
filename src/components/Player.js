@@ -67,10 +67,9 @@ function Player({ token, trackSelect }) {
         </div>
         <div className="App-player-control-times">
           <div id="duration">
-            0:00 -{" "}
             {trackSelect
-              ? millisToMinutesAndSeconds(trackSelect.duration_ms)
-              : "0:00"}
+              ? "0:00 - " + millisToMinutesAndSeconds(trackSelect.duration_ms)
+              : ""}
           </div>
         </div>
       </div>
