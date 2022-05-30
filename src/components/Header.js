@@ -28,6 +28,16 @@ function Header({ setAlbums, token, setToken }) {
     window.localStorage.removeItem("token");
   };
 
+  function test(a, b) {
+    if (a.release_date.toLowerCase() < b.release_date.toLowerCase()) {
+      return 1;
+    }
+    if (a.release_date.toLowerCase() > b.release_date.toLowerCase()) {
+      return -1;
+    }
+    return 0;
+  }
+
   const searchAlbums = async (e) => {
     e.preventDefault();
     const { data } = await axios.get("https://api.spotify.com/v1/search", {
@@ -41,6 +51,8 @@ function Header({ setAlbums, token, setToken }) {
         market: "FR",
       },
     });
+
+    data.albums.items.sort(test);
 
     setAlbums(data.albums.items);
 
