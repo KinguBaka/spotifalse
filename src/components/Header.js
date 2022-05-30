@@ -2,6 +2,11 @@ import React from "react";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+const CLIENT_ID = "fb32fa3129514cb2bed3116a7237ec89";
+const REDIRECT_URI = "http://localhost:3000";
+const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
+const RESPONSE_TYPE = "token";
+
 function Header({ setAlbums, token, setToken }) {
   const [searchKey, setSearchKey] = useState("");
 
@@ -68,7 +73,7 @@ function Header({ setAlbums, token, setToken }) {
       </div>
       {!token ? (
         <a
-          href={`${process.env.REACT_APP_AUTH_ENDPOINT}?client_id=${process.env.REACT_APP_CLIENT_ID}&response_type=${process.env.REACT_APP_RESPONSE_TYPE}&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}`}
+          href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&response_type=${RESPONSE_TYPE}&redirect_uri=${REDIRECT_URI}`}
         >
           Login to Spotify
         </a>
