@@ -1,5 +1,5 @@
 import React from "react";
-import { Howl, Howler } from "howler";
+import { Howl } from "howler";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlay,
@@ -48,7 +48,7 @@ function Player({ token, trackSelect }) {
   return (
     <div className="App-player">
       <div className="App-player-info">
-        <span id="track-name">{trackSelect.name}</span>
+        <span id="track-name">{trackSelect ? trackSelect.name : ""}</span>
       </div>
       <div className="App-player-control">
         <div className="App-player-control-control">
@@ -67,7 +67,10 @@ function Player({ token, trackSelect }) {
         </div>
         <div className="App-player-control-times">
           <div id="duration">
-            0:00 - {millisToMinutesAndSeconds(trackSelect.duration_ms)}
+            0:00 -{" "}
+            {trackSelect
+              ? millisToMinutesAndSeconds(trackSelect.duration_ms)
+              : "0:00"}
           </div>
         </div>
       </div>
